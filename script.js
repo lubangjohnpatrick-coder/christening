@@ -17,7 +17,7 @@
      Leave both blank to keep the built-in form (guests see a
      "not connected" note until one is configured). */
   var CONFIG = {
-    formUrl: '',
+    formUrl: 'https://docs.google.com/forms/d/e/1Eq6BglWI8FDb8IpabYKt5h3VuU5zfARG0_yxIkNH5OU/viewform?embedded=true',
     scriptUrl: ''
   };
 
