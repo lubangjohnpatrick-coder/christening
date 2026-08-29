@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Christening Invitation | Mateo Gray D. Delos Santos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<noscript><style>#cover{display:none}</style></noscript>
+</head>
+<body>
+
+  <div class="bubble b1"></div>
+  <div class="bubble b2"></div>
+  <div class="bubble b3"></div>
+  <div class="bubble b4"></div>
+  <div class="bubble b5"></div>
+
+  <div id="cover" class="cover" role="button" aria-label="Open invitation" tabindex="0">
+    <div class="cover-inner">
+      <div class="penguin" aria-hidden="true">
+        <div class="arm l"></div>
+        <div class="arm r"></div>
+        <div class="body"></div>
+        <div class="belly"></div>
+        <div class="eye l"></div>
+        <div class="eye r"></div>
+        <div class="beak"></div>
+        <div class="foot l"></div>
+        <div class="foot r"></div>
+      </div>
+
+      <p class="cover-kicker">You are invited to the Christening of</p>
+      <h2 class="cover-name">Mateo Gray<br />D. Delos Santos</h2>
+
+      <div class="envelope" aria-hidden="true">
+        <div class="env-flap"></div>
+        <div class="env-body">
+          <div class="env-letter">
+            <span class="env-letter-date">Sept 19, 2026</span>
+            <span class="env-letter-line"></span>
+            <span class="env-letter-line short"></span>
+          </div>
+        </div>
+        <div class="env-seal">&#10022;</div>
+      </div>
+
+      <button type="button" id="cover-open" class="cover-btn">Open Invitation</button>
+      <p class="cover-tap">&#9835;&#9834; Tap to Open &#9835;&#9834;</p>
+    </div>
+  </div>
+
+  <main class="invitation">
+
+    <div class="penguin" aria-hidden="true">
+      <div class="arm l"></div>
+      <div class="arm r"></div>
+      <div class="body"></div>
+      <div class="belly"></div>
+      <div class="eye l"></div>
+      <div class="eye r"></div>
+      <div class="beak"></div>
+      <div class="foot l"></div>
+      <div class="foot r"></div>
+    </div>
+
+    <p class="names">Together with God and their families, the Delos Santos family requests the honor of your presence at the baptism of</p>
+
+    <h1>Mateo Gray <span class="last">D. Delos Santos</span></h1>
+
+    <div class="party-chip">&#9835;&#9834; Po Pow Pay! Join the Party &#9835;&#9834;</div>
+
+    <div class="ornament">&#9835; &#10022; &#9835;</div>
+
+    <p class="invite-text">
+      As our little angel is welcomed into the Christian faith,
+      we would be delighted to have you celebrate this joyful occasion with us.
+      Dance, dance, dance!
+    </p>
+
+    <div class="date-box">September 19, 2026</div>
+
+    <div id="countdown" class="countdown" aria-label="Countdown to the big day"></div>
+
+    <div class="details">
+
+      <div class="event-group">
+        <span class="event-time">10:00 AM</span>
+        <div class="event-title">Baptism</div>
+        <div class="event-place">
+          <strong>JIACM</strong><br />
+          428 Hyacinth St. cor. Honeymoon Rd.,<br />
+          Cecille&rsquo;s Village, Sineguelasan, Bacoor City
+        </div>
+        <div class="map-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=428+Hyacinth+St.+cor.+Honeymoon+Rd.+Cecille%27s+Village+Sineguelasan+Bacoor+City" target="_blank" rel="noopener">View Map</a>
+        </div>
+      </div>
+
+      <div class="event-group">
+        <span class="event-time">12:00 PM</span>
+        <div class="event-title">Reception</div>
+        <div class="event-place">
+          <strong>Kenny Rogers</strong><br />
+          Talaba 1, Bacoor, Cavite
+        </div>
+        <div class="map-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Kenny+Rogers+Talaba+1+Bacoor+Cavite" target="_blank" rel="noopener">View Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="closing">&ldquo;Every good gift and every perfect gift is from above.&rdquo;<br />&mdash; James 1:17</p>
+
+    <div class="footer-note">Your presence will make this day even more special.</div>
+
+    <button type="button" id="rsvp-btn" class="rsvp-btn">RSVP / Confirm Attendance</button>
+  </main>
+
+  <div id="rsvp-overlay" class="rsvp-overlay" hidden>
+    <div class="rsvp-card" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
+      <button type="button" id="rsvp-close" class="rsvp-close" aria-label="Close">&#10005;</button>
+      <div class="rsvp-inner">
+        <h2 id="rsvp-title" class="rsvp-title">Guest Confirmation</h2>
+        <p class="rsvp-sub">Kindly confirm your attendance and let us know who is coming with you.</p>
+
+        <div id="gform-wrap" class="gform-wrap" hidden>
+          <iframe id="gform-iframe" title="Guest Confirmation Form" loading="lazy"></iframe>
+        </div>
+
+        <div id="rsvp-custom">
+          <form id="rsvp-form" novalidate>
+          <label class="field">
+            <span>Full Name <em>*</em></span>
+            <input type="text" id="guest-name" name="name" required autocomplete="name" placeholder="Your full name" />
+          </label>
+
+          <label class="field">
+            <span>Contact Number <em>(optional)</em></span>
+            <input type="tel" id="guest-phone" name="phone" autocomplete="tel" placeholder="09xx xxx xxxx" />
+          </label>
+
+          <fieldset class="field attend-field">
+            <legend>Will you attend?</legend>
+            <label class="radio">
+              <input type="radio" name="attend" value="Will Attend" checked />
+              <span>Yes, I'll attend</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="attend" value="Cannot Attend" />
+              <span>Sorry, can't make it</span>
+            </label>
+          </fieldset>
+
+          <label class="field" id="guest-count-field">
+            <span>How many guests are coming with you?</span>
+            <select id="guest-count" name="guestCount">
+              <option value="0">Just me</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11 or more</option>
+            </select>
+          </label>
+
+          <label class="field" id="companions-field">
+            <span>Names of your companions <em>(optional)</em></span>
+            <textarea id="guest-companions" name="companions" rows="3" placeholder="Ex: Juan Dela Cruz, Maria Santos..."></textarea>
+          </label>
+
+          <p id="rsvp-status" class="rsvp-status" role="status"></p>
+
+          <button type="submit" id="rsvp-submit" class="submit-btn">Send Confirmation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="music-bar" class="music-bar">
+    <button type="button" id="music-toggle" class="music-pill" aria-pressed="false">
+      <span id="music-icon">&#9835;</span>
+      <span id="music-label">Pause</span>
+    </button>
+    <span id="music-hint" class="music-hint">Tap for sound</span>
+    <button type="button" id="music-sound" class="music-sound" aria-label="Unmute music" title="Unmute music">
+      <svg class="sound-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M11 5 6 9H2v6h4l5 4z"></path>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+        <path d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+      </svg>
+      <svg class="sound-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M11 5 6 9H2v6h4l5 4z"></path>
+        <line x1="22" y1="9" x2="16" y2="15"></line>
+        <line x1="16" y1="9" x2="22" y2="15"></line>
+      </svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
