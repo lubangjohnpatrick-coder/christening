@@ -1,5 +1,5 @@
-/**
- * Christening Guest Confirmation - Google Apps Script backend.
+﻿/**
+ * Baby Dedication Guest Confirmation - Google Apps Script backend.
  *
  * HOW TO USE:
  * 1. Create a Google Sheet (sheets.new) for your guest list.
@@ -18,7 +18,7 @@
 
 function doGet() {
   return ContentService
-    .createTextOutput('Christening RSVP endpoint is live.')
+    .createTextOutput('Dedication RSVP endpoint is live.')
     .setMimeType(ContentService.MimeType.TEXT);
 }
 

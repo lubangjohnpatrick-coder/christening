@@ -1,5 +1,5 @@
-/**
- * Christening Guest Confirmation - Google Form auto-setup.
+﻿/**
+ * Baby Dedication Guest Confirmation - Google Form auto-setup.
  *
  * This script creates your Google Form AND its linked guest-list
  * spreadsheet automatically. No deployment or coding needed.
@@ -18,11 +18,11 @@
  */
 
 function createGuestForm() {
-  var ss = SpreadsheetApp.create('Christening Guest List - Mateo Gray D. Delos Santos');
+  var ss = SpreadsheetApp.create('Baby Dedication Guest List - Mateo Gray D. Delos Santos');
 
-  var form = FormApp.create('Christening RSVP - Mateo Gray D. Delos Santos');
+  var form = FormApp.create('Baby Dedication RSVP - Mateo Gray D. Delos Santos');
   form.setDescription(
-    'Please confirm your attendance for the christening of ' +
+    'Please confirm your attendance for the baby dedication of ' +
     'Mateo Gray D. Delos Santos on September 19, 2026.'
   );
 
