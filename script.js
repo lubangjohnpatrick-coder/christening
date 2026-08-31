@@ -1,21 +1,6 @@
 (function () {
   'use strict';
 
-  /* ========== CONFIG ==========
-     Two ways to collect guest confirmations:
-
-     1) GOOGLE FORM (easiest, recommended):
-        - Run setup.gs once (follow its header instructions).
-        - Paste the EMBED URL it prints into formUrl below.
-        - The invitation's RSVP window will then show the Google
-          Form itself, and every answer saves to your spreadsheet.
-
-     2) APPS SCRIPT WEB APP (custom form):
-        - Paste the web app URL from Extensions > Apps Script >
-          Deploy > Web app into scriptUrl below.
-
-     Leave both blank to keep the built-in form (guests see a
-     "not connected" note until one is configured). */
   var CONFIG = {
     formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScAuOmAzvQ6JNdb-mUTfGfAYw9mp9Uvv7SWZkjbxv_TO3Xx4w/viewform?embedded=true',
     scriptUrl: ''
@@ -32,7 +17,7 @@
       CONFIG.formUrl.indexOf('docs.google.com/forms') !== -1;
   }
 
-  /* ========== Cover / pre-invitation ========== */
+  /* ========== Cover ========== */
   var cover = document.getElementById('cover');
   if (cover) {
     document.body.style.overflow = 'hidden';
@@ -60,7 +45,7 @@
 
   function buildLabel(days, hours, minutes, seconds) {
     var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
-    return 'Counting down ' +
+    return 'Boarding in ' +
       '<span class="unit">' + days + '</span> days ' +
       '<span class="unit">' + pad(hours) + '</span> hrs ' +
       '<span class="unit">' + pad(minutes) + '</span> min ' +
@@ -86,6 +71,17 @@
     timerId = window.setInterval(render, 1000);
   }
 
+  /* ========== Boarding pass name sync ========== */
+  var bpInput = document.getElementById('passenger-name');
+  var bpStub = document.getElementById('stub-passenger');
+
+  if (bpInput && bpStub) {
+    bpInput.addEventListener('input', function () {
+      var val = bpInput.value.trim();
+      bpStub.textContent = val ? ('MR./MS. ' + val.toUpperCase()) : 'MR./MS.';
+    });
+  }
+
   /* ========== RSVP ========== */
   var rsvpBtn = document.getElementById('rsvp-btn');
   var rsvpOverlay = document.getElementById('rsvp-overlay');
@@ -99,7 +95,6 @@
   var gformIframe = document.getElementById('gform-iframe');
   var rsvpCustom = document.getElementById('rsvp-custom');
 
-  /* If a Google Form link is configured, show it instead of the built-in form. */
   if (useEmbeddedForm() && gformWrap && gformIframe && rsvpCustom) {
     rsvpCustom.hidden = true;
     gformWrap.hidden = false;
@@ -207,8 +202,6 @@
   });
 
   /* ========== Background music (Web Audio) ========== */
-  /* Generates a gentle looping melody in the browser itself.
-     No external files or YouTube needed — fully offline. */
   var AudioCtxClass = window.AudioContext || window.webkitAudioContext;
   var ctx = null;
   var master = null;
@@ -231,8 +224,6 @@
 
   function midiToFreq(m) { return 440 * Math.pow(2, (m - 69) / 12); }
 
-  /* 16 bars of 4 beats each (64 beats = one loop)
-     Upbeat, bouncy party tune inspired by the Po Pow Pay vibe. */
   var melody = [
     [67, 0.5], [69, 0.5], [72, 1], [76, 1], [74, 0.5], [72, 0.5],
     [74, 0.5], [72, 0.5], [69, 2], [67, 1],
@@ -251,7 +242,7 @@
     [69, 0.5], [71, 0.5], [74, 2], [72, 1],
     [72, 3], [60, 1]
   ];
-  /* one root note per bar (C, G, Am, F pattern), fifth comes with it */
+
   var bass = [
     48, 43, 45, 41,
     48, 43, 45, 43,
@@ -409,7 +400,6 @@
     });
   }
 
-  /* Try to autoplay (browsers will hold the sound until first tap) */
   if (startMusic()) {
     document.addEventListener('pointerdown', unlockSound, { once: true });
     document.addEventListener('touchstart', unlockSound, { once: true });
